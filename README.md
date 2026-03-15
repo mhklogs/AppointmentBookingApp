@@ -15,5 +15,6 @@ Architecture: MVVM (Model-View-ViewModel) for a scalable and clean codebase.
 Backend/Database: Firebase (Auth, Firestore, Realtime Database) or SQLite.
 Tools: Android Studio. 
 4. Getting Started
+Open the Rar file in your Google Antigravity or Android studio.
 Clone the repo: git clone https://github.com.
 Open in Android Studio: Sync Gradle and ensure all dependencies are installed.
