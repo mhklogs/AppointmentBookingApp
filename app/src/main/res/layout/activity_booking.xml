@@ -1,54 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="20dp">
 
-        <TextView
-            android:id="@+id/tvServiceName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Service Name"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
-
-        <CalendarView
-            android:id="@+id/calendarView"
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.Slottr.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select Time Slot:"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RadioGroup
-                android:id="@+id/rgTimeSlots"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <!-- Added dynamically -->
-            </RadioGroup>
-        </HorizontalScrollView>
+                android:orientation="vertical">
 
-        <Button
+                <TextView
+                    android:id="@+id/tvServiceName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book: Service Name"
+                    android:textAppearance="@style/TextAppearance.Slottr.SectionTitle"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:dateTextAppearance="@style/TextAppearance.Slottr.CalendarDate"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pick a time slot"
+                    android:textAppearance="@style/TextAppearance.Slottr.SectionTitle"
+                    android:layout_marginBottom="8dp"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+                    <RadioGroup
+                        android:id="@+id/rgTimeSlots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!-- Added dynamically -->
+                    </RadioGroup>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnConfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Confirm Booking"
-            android:layout_marginTop="24dp"/>
+            android:layout_marginTop="4dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnWaitlist"
+            style="@style/Widget.Slottr.Button.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join Waitlist for a Full Slot"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/tvConfirmation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/success"
+            android:background="@color/primaryLight"
+            android:padding="14dp"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"/>
 
     </LinearLayout>
 </ScrollView>

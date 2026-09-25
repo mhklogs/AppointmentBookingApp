@@ -1,11 +1,67 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.AppointmentBookingApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">#0D47A1</item>
-        <item name="colorPrimaryVariant">#002171</item>
-        <item name="colorOnPrimary">@android:color/white</item>
-        <item name="colorSecondary">#5472d3</item>
-        <item name="colorSecondaryVariant">#002171</item>
-        <item name="colorOnSecondary">@android:color/black</item>
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    <style name="Theme.Slottr" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Brand -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryDark</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+        <item name="colorPrimaryContainer">@color/primaryLight</item>
+
+        <!-- Accent -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondaryDark</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+
+        <!-- Surfaces -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceVariant">@color/surfaceVariant</item>
+        <item name="colorOnSurface">@color/textPrimary</item>
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+        <item name="android:windowBackground">@color/background</item>
+
+        <!-- Status / nav bars -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/primaryDark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+
+        <!-- Material components: modern rounded shapes -->
+        <item name="shapeAppearanceSmallComponent">@style/Shape.Slottr.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/Shape.Slottr.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/Shape.Slottr.Large</item>
+
+        <item name="materialButtonStyle">@style/Widget.Slottr.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.Slottr.Card</item>
+        <item name="textInputStyle">@style/Widget.Slottr.TextInput</item>
+        <item name="chipStyle">@style/Widget.Slottr.Chip</item>
+    </style>
+
+    <style name="Shape.Slottr.Small" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">12dp</item>
+    </style>
+    <style name="Shape.Slottr.Medium" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+    <style name="Shape.Slottr.Large" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="TextAppearance.Slottr.Logo" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/onPrimary</item>
+    </style>
+    <style name="TextAppearance.Slottr.SectionTitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+    <style name="TextAppearance.Slottr.BodySmall" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/textSecondary</item>
+    </style>
+
+    <style name="TextAppearance.Slottr.CalendarDate" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/textPrimary</item>
     </style>
 </resources>

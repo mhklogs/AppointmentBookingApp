@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">Appointment Booking</string>
-    <string name="login">Login</string>
-    <string name="register">Register</string>
+    <string name="app_name">Slottr</string>
+    <string name="app_tagline">Book smarter. Stay on schedule.</string>
+    <string name="login">Log in</string>
+    <string name="register">Create account</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="role">Role</string>
+    <string name="role">I am a…</string>
+    <string name="role_admin">Admin</string>
+    <string name="role_user">Client</string>
     <string name="title_admin_dashboard">Admin Dashboard</string>
     <string name="title_user_home">Book Appointment</string>
     <string name="add_service">Add Service</string>

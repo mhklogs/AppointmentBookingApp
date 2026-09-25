@@ -22,12 +22,12 @@ class AuthRepository {
         }
     }
 
-    suspend fun register(email: String, pass: String, role: Role): Result<User> {
+    suspend fun register(email: String, pass: String, role: Role, name: String = "", phone: String = ""): Result<User> {
         return try {
             val result = auth.createUserWithEmailAndPassword(email, pass).await()
             val uid = result.user?.uid ?: throw Exception("UID null")
             
-            val user = User(uid = uid, email = email, role = role)
+            val user = User(uid = uid, email = email, name = name, phone = phone, role = role)
             
             db.collection("users").document(uid).set(user).await()
             Result.success(user)

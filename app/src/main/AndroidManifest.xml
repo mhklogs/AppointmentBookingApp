@@ -3,16 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="Appointment Booking"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppointmentBookingApp"
+        android:theme="@style/Theme.Slottr"
         tools:targetApi="31">
 
         <activity
@@ -28,6 +30,9 @@
         <activity android:name=".ui.user.UserHomeActivity" />
         <activity android:name=".ui.user.BookingActivity" />
         <activity android:name=".ui.user.HistoryActivity" />
+        <receiver
+            android:name=".util.ReminderReceiver"
+            android:exported="false" />
 
     </application>
 

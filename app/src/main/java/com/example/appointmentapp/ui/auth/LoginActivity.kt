@@ -53,11 +53,13 @@ class LoginActivity : AppCompatActivity() {
         btnRegister.setOnClickListener {
             val email = etEmail.text.toString()
             val pass = etPass.text.toString()
+            val name = findViewById<EditText>(R.id.etName).text.toString()
+            val phone = findViewById<EditText>(R.id.etPhone).text.toString()
             val role = if (rgRole.checkedRadioButtonId == R.id.rbAdmin) Role.ADMIN else Role.USER
             
             if (email.isNotEmpty() && pass.isNotEmpty()) {
                 lifecycleScope.launch {
-                    val result = repository.register(email, pass, role)
+                    val result = repository.register(email, pass, role, name, phone)
                     if (result.isSuccess) {
                         checkRoleAndNavigate()
                     } else {

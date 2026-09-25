@@ -1,4 +1,4 @@
-# Appointment Booking App
+# Slottr — Appointment Booking App
 
 A modern, Firebase-powered **appointment scheduling app** for Android, built with **Kotlin** and **Material Design**. Designed for clinics, salons, and consultants — it lets clients book services in a few taps while admins manage services and view all bookings in real time.
 
@@ -8,23 +8,35 @@ A modern, Firebase-powered **appointment scheduling app** for Android, built wit
 
 ## ✨ Features
 
-- **User Authentication** — Secure sign-up / login with Firebase Auth (email + password)
+- **User Authentication** — Secure sign-up / login with Firebase Auth (email + password + name/phone profile)
 - **Role-Based Access** — Separate experiences for **Admins** and **Users**
-  - **User:** browse services, pick a date & time slot, book instantly, and view booking history
-  - **Admin:** add services with price & duration, review all appointments
-- **Real-time Booking** — Duplicate-slot detection prevents double-booking the same service/time
-- **Appointment History** — See past & upcoming bookings with status
-- **Polished Material UI** — Card-based lists, calendars, and Material Components theme
+  - **User:** browse services, pick a date & time slot, book instantly, view booking history, cancel / check-in / complete / rate, and join a **waitlist** when a slot is taken
+  - **Admin:** add services with price, description & duration, review all appointments, mark Confirm / Checked-in / Completed / No-Show / Cancelled, and see today's visits, income & waitlist
+- **Smart Time Slots** — Auto-generated 09:00–18:00 slots from service duration + buffer; booked slots disabled to prevent double-booking
+- **Automatic Check-In Code** — Each booking gets a code the client shows at the door
+- **Appointment Reminders** — Local notification 1 hour before the booking (AlarmManager)
+- **Booking History** — See past & upcoming bookings with color-coded status and receipt reference
+- **Polished Material UI** — Modern indigo theme, card-based lists, rounded controls; R8 + resource shrinking keep the APK lean
+
+## 📲 Download the APK
+
+Grab the latest signed release and install it directly on your Android device:
+
+| App | APK | Size |
+|---|---|---|
+| Slottr v2.0 | [**Slottr.apk**](https://android-apps-rho.vercel.app/downloads/Slottr.apk) | ~4 MB |
+
+Requires **Android 7.0 (API 24)+**. Allow installation from unknown sources when prompted.
 
 ## 🛠 Tech Stack
 
 | Layer      | Technology                                                     |
 |------------|----------------------------------------------------------------|
 | Language   | Kotlin                                                         |
-| UI         | XML layouts + Material Components, ViewBinding-ready          |
-| Architecture | MVVM-style (Repository pattern with Coroutines)              |
+| UI         | XML layouts + Material Components (Theme.Slottr)              |
+| Architecture | Repository pattern with Coroutines                          |
 | Backend    | Firebase Auth + Cloud Firestore                                |
-| Build      | Gradle (AGP 8.x), Kotlin 1.9                                   |
+| Build      | Gradle (AGP 8.x), Kotlin 1.9, R8 + resource shrinking          |
 
 ## 🚀 Getting Started
 
@@ -34,7 +46,7 @@ A modern, Firebase-powered **appointment scheduling app** for Android, built wit
 
 ### 1. Clone & open
 ```bash
-git clone https://github.com/mhklogs/AppointmentBookingApp.git
+git clone https://github.com/mhklogs/Slottr.git
 ```
 Open the folder in Android Studio and let Gradle sync (`File → Sync Project with Gradle Files`).
 
@@ -79,10 +91,9 @@ app/src/main/java/com/example/appointmentapp/
 
 ## 🧭 Roadmap
 
-- Push notifications & reminders to reduce no-shows
-- Time-slot availability grid per service
-- Booking cancellation / rescheduling
-- Admin analytics dashboard
+- Server-side push notifications (Firebase Cloud Messaging)
+- In-app payment at booking
+- Multi-branch / multi-admin support
 
 ## 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.

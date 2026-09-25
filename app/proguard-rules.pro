@@ -1,13 +1,6 @@
-# ------------------------------------------------------------------
-# Appointment Booking App - ProGuard rules
-# ------------------------------------------------------------------
-
-# Keep line numbers for crash reports
--keepattributes SourceFile,LineNumberTable
--renamesourcefileattribute SourceFile
-
-# Keep Google/Firebase SDKs
--keep class com.google.firebase.** { *; }
-
-# Keep data models (used with Firestore serialization)
+# Keep Firestore model classes (reflection-based serialization)
 -keep class com.example.appointmentapp.data.model.** { *; }
+
+# Firebase
+-keep class com.google.firebase.** { *; }
+-dontwarn com.google.firebase.**

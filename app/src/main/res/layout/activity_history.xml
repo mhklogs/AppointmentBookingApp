@@ -8,14 +8,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="My Bookings"
-        android:textSize="24sp"
-        android:padding="16dp"
-        android:background="?attr/colorPrimary"
-        android:textColor="@android:color/white"/>
+        android:textAppearance="@style/TextAppearance.Slottr.SectionTitle"
+        android:textSize="22sp"
+        android:padding="20dp"
+        android:background="@color/primary"
+        android:textColor="@color/onPrimary"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHistory"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="4dp"
+        android:paddingBottom="24dp"/>
 
 </LinearLayout>
