@@ -42,9 +42,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pick a time slot"
+                    android:text="@string/pick_time"
                     android:textAppearance="@style/TextAppearance.Slottr.SectionTitle"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" 
+                    android:id="@+id/tvSlotHint"
+                    android:textAppearance="@style/TextAppearance.Slottr.BodySmall"
+                    android:layout_marginBottom="10dp"/>
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -54,8 +62,8 @@
                         android:id="@+id/rgTimeSlots"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <!-- Added dynamically -->
+                        android:orientation="horizontal"
+                        android:paddingBottom="4dp">
                     </RadioGroup>
                 </HorizontalScrollView>
             </LinearLayout>
@@ -65,15 +73,17 @@
             android:id="@+id/btnConfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Confirm Booking"
-            android:layout_marginTop="4dp"/>
+            android:text="@string/confirm_booking"
+            android:layout_marginTop="4dp"
+            app:icon="@drawable/ic_calendar_check"
+            app:iconGravity="textStart"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnWaitlist"
             style="@style/Widget.Slottr.Button.Outlined"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Join Waitlist for a Full Slot"
+            android:text="@string/join_waitlist"
             android:layout_marginTop="12dp"/>
 
         <TextView
@@ -84,8 +94,8 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/success"
-            android:background="@color/primaryLight"
-            android:padding="14dp"
+            android:background="@drawable/bg_confirmation"
+            android:padding="16dp"
             android:layout_marginTop="16dp"
             android:visibility="gone"/>
 

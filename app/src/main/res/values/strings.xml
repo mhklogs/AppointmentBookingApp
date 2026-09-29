@@ -1,15 +1,35 @@
 <resources>
     <string name="app_name">Slottr</string>
     <string name="app_tagline">Book smarter. Stay on schedule.</string>
+    <string name="app_subtitle">Pick a service and book your slot in seconds.</string>
+    <string name="available_services">Available Services</string>
+    <string name="your_bookings">Your Bookings</string>
+    <string name="app_hero_subtitle">Appointments, reminders &amp; waitlist — all in one place.</string>
     <string name="login">Log in</string>
     <string name="register">Create account</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone">Phone</string>
     <string name="role">I am a…</string>
     <string name="role_admin">Admin</string>
     <string name="role_user">Client</string>
     <string name="title_admin_dashboard">Admin Dashboard</string>
-    <string name="title_user_home">Book Appointment</string>
+    <string name="admin_subtitle">Manage services, appointments &amp; waitlist.</string>
+    <string name="overview">Overview</string>
+    <string name="appointments">Appointments</string>
+    <string name="title_user_home">Pick a service</string>
     <string name="add_service">Add Service</string>
     <string name="book_now">Book Now</string>
+    <string name="my_bookings">My Bookings</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="sign_in_continue">Sign in or create your account to manage your appointments.</string>
+    <string name="pick_date">Choose a date</string>
+    <string name="pick_time">Pick a time slot</string>
+    <string name="confirm_booking">Confirm Booking</string>
+    <string name="join_waitlist">Join Waitlist for a Full Slot</string>
+    <string name="today">Today</string>
+    <string name="all">All</string>
+    <string name="income">Income</string>
+    <string name="waitlist">Waitlist</string>
 </resources>

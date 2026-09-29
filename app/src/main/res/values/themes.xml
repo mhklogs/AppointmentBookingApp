@@ -1,67 +1,88 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.Slottr" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Brand -->
+    <style name="Base.Theme.Slottr" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Color -->
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primaryDark</item>
         <item name="colorOnPrimary">@color/onPrimary</item>
-        <item name="colorPrimaryContainer">@color/primaryLight</item>
-
-        <!-- Accent -->
+        <item name="colorPrimaryContainer">@color/primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/onPrimaryContainer</item>
         <item name="colorSecondary">@color/secondary</item>
-        <item name="colorSecondaryVariant">@color/secondaryDark</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
+        <item name="colorSecondaryContainer">@color/secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/onSecondaryContainer</item>
+        <item name="colorTertiary">@color/tertiary</item>
+        <item name="colorOnTertiary">@color/onTertiary</item>
+        <item name="colorTertiaryContainer">@color/tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/onTertiaryContainer</item>
 
-        <!-- Surfaces -->
-        <item name="android:colorBackground">@color/background</item>
         <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/onSurface</item>
         <item name="colorSurfaceVariant">@color/surfaceVariant</item>
-        <item name="colorOnSurface">@color/textPrimary</item>
-        <item name="android:textColorPrimary">@color/textPrimary</item>
-        <item name="android:textColorSecondary">@color/textSecondary</item>
-        <item name="android:windowBackground">@color/background</item>
+        <item name="colorOnSurfaceVariant">@color/onSurfaceVariant</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="colorOutlineVariant">@color/outlineVariant</item>
+        <item name="colorError">@color/danger</item>
+        <item name="colorErrorContainer">@color/dangerContainer</item>
 
-        <!-- Status / nav bars -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/primaryDark</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:textColorPrimary">@color/onSurface</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/statusBar</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="android:navigationBarColor">@color/surface</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">@bool/slottr_light_nav_bar</item>
 
-        <!-- Material components: modern rounded shapes -->
+        <!-- Shapes -->
         <item name="shapeAppearanceSmallComponent">@style/Shape.Slottr.Small</item>
         <item name="shapeAppearanceMediumComponent">@style/Shape.Slottr.Medium</item>
         <item name="shapeAppearanceLargeComponent">@style/Shape.Slottr.Large</item>
 
+        <!-- Components -->
         <item name="materialButtonStyle">@style/Widget.Slottr.Button</item>
         <item name="materialCardViewStyle">@style/Widget.Slottr.Card</item>
         <item name="textInputStyle">@style/Widget.Slottr.TextInput</item>
         <item name="chipStyle">@style/Widget.Slottr.Chip</item>
+        <item name="floatingActionButtonStyle">@style/Widget.Slottr.Fab</item>
+        <item name="bottomNavigationStyle">@style/Widget.Slottr.BottomNav</item>
     </style>
 
-    <style name="Shape.Slottr.Small" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+    <style name="Theme.Slottr" parent="Base.Theme.Slottr" />
+
+    <style name="Shape.Slottr.Small" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerSize">12dp</item>
     </style>
-    <style name="Shape.Slottr.Medium" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+
+    <style name="Shape.Slottr.Medium" parent="ShapeAppearance.Material3.MediumComponent">
         <item name="cornerSize">16dp</item>
     </style>
-    <style name="Shape.Slottr.Large" parent="ShapeAppearance.MaterialComponents.LargeComponent">
-        <item name="cornerSize">24dp</item>
+
+    <style name="Shape.Slottr.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerSize">28dp</item>
     </style>
 
-    <style name="TextAppearance.Slottr.Logo" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="android:fontFamily">sans-serif-medium</item>
+    <style name="TextAppearance.Slottr.Logo" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">sans-serif-black</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:letterSpacing">0.02</item>
-        <item name="android:textColor">@color/onPrimary</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">@color/textPrimary</item>
     </style>
-    <style name="TextAppearance.Slottr.SectionTitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+
+    <style name="TextAppearance.Slottr.Display" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Slottr.SectionTitle" parent="TextAppearance.Material3.TitleMedium">
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textColor">@color/textPrimary</item>
     </style>
-    <style name="TextAppearance.Slottr.BodySmall" parent="TextAppearance.MaterialComponents.Body2">
+
+    <style name="TextAppearance.Slottr.BodySmall" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:textColor">@color/textSecondary</item>
     </style>
 
-    <style name="TextAppearance.Slottr.CalendarDate" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="android:textColor">@color/textPrimary</item>
+    <style name="TextAppearance.Slottr.CalendarDate" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/onSurface</item>
     </style>
 </resources>

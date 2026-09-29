@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        style="@style/Widget.Slottr.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="@string/your_bookings"
+        app:navigationIconTint="@color/textPrimary"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My Bookings"
-        android:textAppearance="@style/TextAppearance.Slottr.SectionTitle"
-        android:textSize="22sp"
-        android:padding="20dp"
-        android:background="@color/primary"
-        android:textColor="@color/onPrimary"/>
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/my_bookings"
+        android:textAppearance="@style/TextAppearance.Slottr.SectionTitle"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHistory"

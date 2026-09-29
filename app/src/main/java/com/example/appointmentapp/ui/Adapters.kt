@@ -70,15 +70,20 @@ class AppointmentAdapter(
         holder.tvRef.text = "Receipt: #${item.id.takeLast(8).uppercase()}"
 
         val color = when (item.status) {
-            "BOOKED" -> android.graphics.Color.rgb(79, 70, 229)
-            "CONFIRMED" -> android.graphics.Color.rgb(6, 182, 212)
-            "CHECKED_IN" -> android.graphics.Color.rgb(2, 132, 199)
-            "COMPLETED" -> android.graphics.Color.rgb(22, 163, 74)
-            "CANCELLED" -> android.graphics.Color.rgb(100, 116, 139)
-            "NO_SHOW" -> android.graphics.Color.rgb(220, 38, 38)
-            else -> android.graphics.Color.rgb(79, 70, 229)
+            "BOOKED" -> R.color.badgeBooked
+            "CONFIRMED" -> R.color.badgeConfirmed
+            "CHECKED_IN" -> R.color.badgeCheckedIn
+            "COMPLETED" -> R.color.badgeCompleted
+            "CANCELLED" -> R.color.badgeCancelled
+            "NO_SHOW" -> R.color.badgeNoShow
+            else -> R.color.badgeBooked
         }
-        holder.tvStatus.setTextColor(color)
+        holder.tvStatus.setBackgroundTintList(
+            android.content.res.ColorStateList.valueOf(
+                ContextCompat.getColor(holder.itemView.context, color)
+            )
+        )
+        holder.tvStatus.setTextColor(android.graphics.Color.WHITE)
         holder.itemView.setOnClickListener { onClick(item) }
     }
 

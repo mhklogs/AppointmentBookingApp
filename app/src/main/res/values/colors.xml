@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand: Indigo + Sky -->
     <color name="primary">#4F46E5</color>
-    <color name="primaryDark">#4338CA</color>
-    <color name="primaryLight">#EEF2FF</color>
     <color name="onPrimary">#FFFFFF</color>
+    <color name="primaryContainer">#E0E7FF</color>
+    <color name="onPrimaryContainer">#1E1B4B</color>
+    <color name="primaryDark">#3730A3</color>
+    <color name="statusBar">#4F46E5</color>
 
-    <color name="secondary">#06B6D4</color>
-    <color name="secondaryDark">#0891B2</color>
-    <color name="onSecondary">#0B1220</color>
+    <color name="secondary">#0891B2</color>
+    <color name="onSecondary">#FFFFFF</color>
+    <color name="secondaryContainer">#CFFAFE</color>
+    <color name="onSecondaryContainer">#164E63</color>
 
+    <color name="tertiary">#7C3AED</color>
+    <color name="onTertiary">#FFFFFF</color>
+    <color name="tertiaryContainer">#EDE9FE</color>
+    <color name="onTertiaryContainer">#312E81</color>
+
+    <!-- Surfaces -->
+    <color name="background">#F6F7FB</color>
+    <color name="onBackground">#0F172A</color>
     <color name="surface">#FFFFFF</color>
-    <color name="surfaceVariant">#F8FAFC</color>
-    <color name="background">#F3F4F6</color>
     <color name="onSurface">#0F172A</color>
+    <color name="surfaceVariant">#F1F3F9</color>
+    <color name="onSurfaceVariant">#44506A</color>
+    <color name="outline">#C7CDD9</color>
+    <color name="outlineVariant">#E4E7EF</color>
 
     <color name="textPrimary">#0F172A</color>
     <color name="textSecondary">#64748B</color>
-    <color name="divider">#E2E8F0</color>
+    <color name="textOnPrimary">#FFFFFF</color>
 
+    <!-- Semantic -->
     <color name="success">#16A34A</color>
+    <color name="successContainer">#DCFCE7</color>
     <color name="warning">#D97706</color>
+    <color name="warningContainer">#FEF3C7</color>
     <color name="danger">#DC2626</color>
+    <color name="dangerContainer">#FEE2E2</color>
     <color name="info">#0284C7</color>
+    <color name="infoContainer">#E0F2FE</color>
+
+    <color name="divider">#E4E7EF</color>
+
+    <!-- Charts / badges -->
+    <color name="badgeBooked">#4F46E5</color>
+    <color name="badgeConfirmed">#0891B2</color>
+    <color name="badgeCheckedIn">#0284C7</color>
+    <color name="badgeCompleted">#16A34A</color>
+    <color name="badgeCancelled">#64748B</color>
+    <color name="badgeNoShow">#DC2626</color>
+    <color name="badgeWaitlisted">#7C3AED</color>
 </resources>

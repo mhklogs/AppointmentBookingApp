@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand: Indigo + Sky (dark) -->
+    <color name="primary">#8B8FF8</color>
+    <color name="onPrimary">#1E1B4B</color>
+    <color name="primaryContainer">#3730A3</color>
+    <color name="onPrimaryContainer">#E0E7FF</color>
+    <color name="primaryDark">#A5B4FC</color>
+    <color name="statusBar">#0E1117</color>
+
+    <color name="secondary">#22D3EE</color>
+    <color name="onSecondary">#083344</color>
+    <color name="secondaryContainer">#155E75</color>
+    <color name="onSecondaryContainer">#CFFAFE</color>
+
+    <color name="tertiary">#A78BFA</color>
+    <color name="onTertiary">#312E81</color>
+    <color name="tertiaryContainer">#4C1D95</color>
+    <color name="onTertiaryContainer">#EDE9FE</color>
+
+    <!-- Surfaces -->
+    <color name="background">#0E1117</color>
+    <color name="onBackground">#E6E8F1</color>
+    <color name="surface">#151A23</color>
+    <color name="onSurface">#E6E8F1</color>
+    <color name="surfaceVariant">#232A37</color>
+    <color name="onSurfaceVariant">#B6BFD0</color>
+    <color name="outline">#3E4657</color>
+    <color name="outlineVariant">#2A3242</color>
+
+    <color name="textPrimary">#E6E8F1</color>
+    <color name="textSecondary">#9AA4B8</color>
+    <color name="textOnPrimary">#1E1B4B</color>
+
+    <!-- Semantic -->
+    <color name="success">#4ADE80</color>
+    <color name="successContainer">#14532D</color>
+    <color name="warning">#FBBF24</color>
+    <color name="warningContainer">#78350F</color>
+    <color name="danger">#F87171</color>
+    <color name="dangerContainer">#7F1D1D</color>
+    <color name="info">#38BDF8</color>
+    <color name="infoContainer">#0C4A6E</color>
+
+    <color name="divider">#2A3242</color>
+
+    <!-- Charts / badges -->
+    <color name="badgeBooked">#8B8FF8</color>
+    <color name="badgeConfirmed">#22D3EE</color>
+    <color name="badgeCheckedIn">#38BDF8</color>
+    <color name="badgeCompleted">#4ADE80</color>
+    <color name="badgeCancelled">#94A3B8</color>
+    <color name="badgeNoShow">#F87171</color>
+    <color name="badgeWaitlisted">#A78BFA</color>
+</resources>
