@@ -24,7 +24,7 @@ Grab the latest signed release and install it directly on your Android device:
 
 | App | APK | Size |
 |---|---|---|
-| Slottr v2.0 | [**Slottr.apk**](https://android-apps-rho.vercel.app/downloads/Slottr.apk) | ~4 MB |
+| Slottr v2.0 | [**BookMyAppointment.apk**](https://android-apps-rho.vercel.app/downloads/BookMyAppointment.apk) | ~7.6 MB |
 
 Requires **Android 7.0 (API 24)+**. Allow installation from unknown sources when prompted.
 
@@ -46,7 +46,7 @@ Requires **Android 7.0 (API 24)+**. Allow installation from unknown sources when
 
 ### 1. Clone & open
 ```bash
-git clone https://github.com/mhklogs/Slottr.git
+git clone https://github.com/mhklogs/AppointmentBookingApp.git
 ```
 Open the folder in Android Studio and let Gradle sync (`File → Sync Project with Gradle Files`).
 
