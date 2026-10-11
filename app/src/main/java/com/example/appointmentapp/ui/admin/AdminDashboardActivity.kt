@@ -1,7 +1,9 @@
 package com.example.appointmentapp.ui.admin
 
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -15,7 +17,9 @@ import com.example.appointmentapp.data.model.Appointment
 import com.example.appointmentapp.data.model.AppointmentStatus
 import com.example.appointmentapp.data.model.Service
 import com.example.appointmentapp.data.model.WaitlistEntry
+import com.example.appointmentapp.data.repository.AuthRepository
 import com.example.appointmentapp.data.repository.FirestoreRepository
+import com.example.appointmentapp.ui.auth.LoginActivity
 import com.example.appointmentapp.ui.user.AppointmentAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.launch
@@ -26,6 +30,7 @@ import java.util.Locale
 class AdminDashboardActivity : AppCompatActivity() {
 
     private val repository = FirestoreRepository()
+    private val auth = AuthRepository()
     private val adapter = AppointmentAdapter(onClick = { showStatusManagement(it) })
     private var appointments = listOf<Appointment>()
     private var filter = "ALL"
@@ -60,6 +65,15 @@ class AdminDashboardActivity : AppCompatActivity() {
             showAddServiceDialog()
         }
 
+        findViewById<ImageButton>(R.id.btnAdminLogout).setOnClickListener {
+            auth.logout()
+            startActivity(android.content.Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
+        findViewById<TextView>(R.id.tvEmptyTitle).text = getString(R.string.empty_appointments_title)
+        findViewById<TextView>(R.id.tvEmptyBody).text = getString(R.string.empty_appointments_body)
+
         load()
     }
 
@@ -85,8 +99,11 @@ class AdminDashboardActivity : AppCompatActivity() {
 
         val completed = appointments.filter { it.status == AppointmentStatus.COMPLETED.name && !it.checkInCode.isBlank() }
         val todayCount = appointments.count { it.date == todayStr() && it.status != AppointmentStatus.CANCELLED.name }
+        findViewById<TextView>(R.id.tvAll).text = "All: ${appointments.size}"
         findViewById<TextView>(R.id.tvToday).text = "Today: $todayCount"
         findViewById<TextView>(R.id.tvIncome).text = "Income: $${completed.size * 50}"
+
+        findViewById<View>(R.id.emptyState).visibility = if (list.isEmpty()) View.VISIBLE else View.GONE
     }
 
     private fun showWaitlist() {

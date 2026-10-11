@@ -1,6 +1,8 @@
 package com.example.appointmentapp.ui.user
 
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -28,6 +30,12 @@ class HistoryActivity : AppCompatActivity() {
         rv.layoutManager = LinearLayoutManager(this)
         rv.adapter = adapter
 
+        findViewById<com.google.android.material.appbar.MaterialToolbar>(R.id.toolbarHistory)
+            .setNavigationOnClickListener { finish() }
+
+        findViewById<TextView>(R.id.tvEmptyTitle).text = getString(R.string.empty_history_title)
+        findViewById<TextView>(R.id.tvEmptyBody).text = getString(R.string.empty_history_body)
+
         val uid = auth.getCurrentUid()
         if (uid != null) {
             load()
@@ -38,7 +46,10 @@ class HistoryActivity : AppCompatActivity() {
         val uid = auth.getCurrentUid() ?: return
         lifecycleScope.launch {
             val result = repository.getUserAppointments(uid)
-            result.onSuccess { adapter.updateList(it) }
+            result.onSuccess {
+                adapter.updateList(it)
+                findViewById<View>(R.id.emptyState).visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
+            }
                 .onFailure { Toast.makeText(this@HistoryActivity, "Could not load bookings. Check your connection.", Toast.LENGTH_SHORT).show() }
         }
     }

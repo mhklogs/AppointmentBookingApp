@@ -69,6 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="24dp"
+                android:id="@+id/tvLoginSubtitle"
                 android:text="@string/sign_in_continue"
                 android:textAppearance="@style/TextAppearance.Slottr.BodySmall"
                 android:gravity="center"/>
@@ -99,6 +100,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/full_name"
                 android:layout_marginBottom="14dp"
+                android:visibility="gone"
                 app:startIconDrawable="@drawable/ic_person"
                 app:startIconTint="@color/primary"
                 app:endIconMode="none">
@@ -118,6 +120,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/phone"
                 android:layout_marginBottom="14dp"
+                android:visibility="gone"
                 app:startIconDrawable="@drawable/ic_phone"
                 app:startIconTint="@color/primary"
                 app:endIconMode="none">
@@ -156,6 +159,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="22dp"
+                android:visibility="gone"
                 android:background="@drawable/bg_role_container"
                 android:padding="4dp">
 

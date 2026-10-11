@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/emptyState"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="40dp"
+    android:visibility="gone">
+
+    <ImageView
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:alpha="0.4"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_calendar_check"
+        app:tint="@color/outline"/>
+
+    <TextView
+        android:id="@+id/tvEmptyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/empty_services_title"
+        android:textAppearance="@style/TextAppearance.Slottr.SectionTitle"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tvEmptyBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="@string/empty_services_body"
+        android:textAppearance="@style/TextAppearance.Slottr.BodySmall"
+        android:gravity="center"/>
+</LinearLayout>

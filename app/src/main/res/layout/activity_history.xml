@@ -7,10 +7,12 @@
     android:background="@color/background">
 
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarHistory"
         style="@style/Widget.Slottr.Toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:title="@string/your_bookings"
+        app:navigationIcon="@drawable/ic_arrow_back"
         app:navigationIconTint="@color/textPrimary"/>
 
     <TextView
@@ -22,12 +24,21 @@
         android:text="@string/my_bookings"
         android:textAppearance="@style/TextAppearance.Slottr.SectionTitle"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvHistory"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingTop="4dp"
-        android:paddingBottom="24dp"/>
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="4dp"
+            android:paddingBottom="24dp"/>
+
+        <include
+            android:id="@+id/emptyState"
+            layout="@layout/view_empty"/>
+    </FrameLayout>
 
 </LinearLayout>

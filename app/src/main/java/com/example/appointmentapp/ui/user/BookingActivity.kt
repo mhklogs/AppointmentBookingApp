@@ -48,6 +48,9 @@ class BookingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking)
 
+        findViewById<com.google.android.material.appbar.MaterialToolbar>(R.id.toolbarBooking)
+            .setNavigationOnClickListener { finish() }
+
         val serviceId = intent.getStringExtra("serviceId") ?: return
         val serviceName = intent.getStringExtra("serviceName") ?: ""
 
