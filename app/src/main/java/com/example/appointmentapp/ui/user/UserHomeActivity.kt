@@ -61,6 +61,8 @@ class UserHomeActivity : AppCompatActivity() {
             val result = repository.getServices()
             result.onSuccess {
                 adapter.updateList(it)
+                findViewById<TextView>(R.id.tvServicesHeader).text =
+                    getString(R.string.available_services_count, it.size)
                 findViewById<View>(R.id.emptyState).visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
             }
                 .onFailure { Toast.makeText(this@UserHomeActivity, "Could not load services. Check your connection.", Toast.LENGTH_SHORT).show() }

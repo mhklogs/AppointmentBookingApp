@@ -38,6 +38,11 @@
         <item name="contentPadding">18dp</item>
     </style>
 
+    <style name="Widget.Slottr.Card.List" parent="Widget.Slottr.Card">
+        <item name="contentPadding">16dp</item>
+        <item name="rippleColor">@color/primaryContainer</item>
+    </style>
+
     <style name="Widget.Slottr.Card.Filled" parent="Widget.Material3.CardView.Filled">
         <item name="cardCornerRadius">20dp</item>
         <item name="cardElevation">0dp</item>

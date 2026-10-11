@@ -18,6 +18,7 @@ class ServiceAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvName: TextView = view.findViewById(R.id.tvServiceName)
         val tvDetails: TextView = view.findViewById(R.id.tvServiceDetails)
+        val tvPrice: TextView = view.findViewById(R.id.tvServicePrice)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,9 +29,10 @@ class ServiceAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val service = services[position]
         holder.tvName.text = service.name
-        holder.tvDetails.text = "$${service.price} - ${service.durationMinutes} mins"
+        holder.tvPrice.text = "$${service.price}"
+        holder.tvDetails.text = "${service.durationMinutes} min"
         if (service.description.isNotBlank()) {
-            holder.tvDetails.text = holder.tvDetails.text.toString() + "\n" + service.description
+            holder.tvDetails.text = holder.tvDetails.text.toString() + " \u00B7 " + service.description
         }
         holder.itemView.setOnClickListener { onClick(service) }
     }
@@ -64,9 +66,9 @@ class AppointmentAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = appointments[position]
         holder.tvName.text = item.serviceName
-        holder.tvDate.text = "Date: ${item.date}"
-        holder.tvTime.text = "Time: ${item.timeSlot}"
-        holder.tvStatus.text = "Status: ${item.status}"
+        holder.tvDate.text = item.date
+        holder.tvTime.text = item.timeSlot
+        holder.tvStatus.text = item.status
         holder.tvRef.text = "Receipt: #${item.id.takeLast(8).uppercase()}"
 
         val color = when (item.status) {

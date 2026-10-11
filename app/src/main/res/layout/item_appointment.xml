@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/Widget.Slottr.Card"
+    style="@style/Widget.Slottr.Card.List"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="12dp"
+    android:layout_marginStart="@dimen/space_md"
+    android:layout_marginTop="@dimen/space_xs"
+    android:layout_marginEnd="@dimen/space_md"
+    android:layout_marginBottom="@dimen/space_xs"
+    android:clickable="true"
+    android:focusable="true"
     app:cardElevation="2dp">
 
     <LinearLayout
@@ -36,51 +41,100 @@
 
                 <TextView
                     android:id="@+id/tvServiceName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Service Name"
                     android:textAppearance="@style/TextAppearance.Slottr.SectionTitle"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp"
+                    android:maxLines="2"
+                    android:ellipsize="end"/>
 
-                <TextView
-                    android:id="@+id/tvDate"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Jan 1, 2024"
-                    android:textAppearance="@style/TextAppearance.Slottr.BodySmall"
-                    android:layout_marginTop="2dp"/>
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
-                <TextView
-                    android:id="@+id/tvTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10:00 AM"
-                    android:textAppearance="@style/TextAppearance.Slottr.BodySmall"
-                    android:layout_marginTop="2dp"/>
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_today"
+                        app:tint="@color/textSecondary"/>
+
+                    <TextView
+                        android:id="@+id/tvDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="Jan 1, 2024"
+                        android:textAppearance="@style/TextAppearance.Slottr.BodySmall"/>
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="12dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_clock"/>
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="10:00 AM"
+                        android:textAppearance="@style/TextAppearance.Slottr.BodySmall"/>
+                </LinearLayout>
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tvStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Status: BOOKED"
+                android:layout_marginStart="8dp"
+                android:text="BOOKED"
+                android:textSize="11sp"
                 android:textStyle="bold"
                 android:textColor="@color/onPrimaryContainer"
+                android:letterSpacing="0.03"
                 android:background="@drawable/bg_status_pill"
-                android:paddingStart="12dp"
-                android:paddingTop="6dp"
-                android:paddingEnd="12dp"
-                android:paddingBottom="6dp"/>
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"/>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvRef"
-            android:layout_width="wrap_content"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:background="@color/divider"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Receipt: #ABCDEF12"
-            android:textSize="12sp"
-            android:textColor="@color/textSecondary"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_receipt"/>
+
+            <TextView
+                android:id="@+id/tvRef"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Receipt: #ABCDEF12"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:textColor="@color/textSecondary"/>
+        </LinearLayout>
 
     </LinearLayout>
 

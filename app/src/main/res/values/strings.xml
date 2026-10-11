@@ -3,6 +3,7 @@
     <string name="app_tagline">Book smarter. Stay on schedule.</string>
     <string name="app_subtitle">Pick a service and book your slot in seconds.</string>
     <string name="available_services">Available Services</string>
+    <string name="available_services_count">Available Services \u00B7 %1$d</string>
     <string name="your_bookings">Your Bookings</string>
     <string name="app_hero_subtitle">Appointments, reminders &amp; waitlist — all in one place.</string>
     <string name="login">Log in</string>
